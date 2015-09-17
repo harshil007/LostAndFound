@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nu_logo"
+        android:id="@+id/imageView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="54dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nirma"
+        android:textSize="40sp"
+        android:textColor="#0059BC"
+        android:id="@+id/tvNirma"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_above="@+id/tvUni"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="University"
+        android:textSize="40sp"
+        android:textColor="#0059BC"
+        android:id="@+id/tvUni"
+        android:layout_above="@+id/imageView"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

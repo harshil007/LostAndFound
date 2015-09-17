@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    style="@style/back"
+    >
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tvdisp_id"
+    android:text="ID : "
+    android:textSize="20sp"
+    android:layout_centerHorizontal="true"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvdisp_id"
+        android:id="@+id/tv_id"
+        android:text=""
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdisp_id"
+        android:id="@+id/tvdisp_item"
+        android:text="Item type : "
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdisp_id"
+        android:layout_toRightOf="@+id/tvdisp_item"
+        android:id="@+id/tv_item"
+        android:text=""
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdisp_item"
+        android:id="@+id/tvdisp_place"
+        android:text="Place : "
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdisp_item"
+        android:layout_toRightOf="@+id/tvdisp_place"
+        android:id="@+id/tv_place"
+        android:text=""
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tvdisp_place"
+    android:id="@+id/tvdisp_date"
+    android:text="Date : "
+    android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdisp_place"
+        android:layout_toRightOf="@+id/tvdisp_date"
+        android:id="@+id/tv_date"
+        android:text=""
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdisp_date"
+        android:id="@+id/tvdisp_description"
+        android:text="Description : "
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdisp_date"
+        android:layout_toRightOf="@+id/tvdisp_description"
+        android:id="@+id/tv_description"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdisp_description"
+        style="@style/button"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/bdismiss"
+        android:text="OK"
+        />
+</RelativeLayout>

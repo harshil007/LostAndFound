@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/Rel_layout_demo">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_url"
+        android:text="IMAGE_URL"
+        android:layout_weight="1"
+        android:textSize="30sp"
+        android:autoText="false"
+        android:textAlignment="center"
+        android:textColor="#010001" />
+
+    <EditText
+        android:layout_below="@+id/img_url"
+        android:id="@+id/etItem"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_below="@+id/img_url"
+        android:text="Submit"
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/etItem"
+        />
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_below="@+id/etItem"
+        android:id="@+id/imgAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"/>
+
+</RelativeLayout>
