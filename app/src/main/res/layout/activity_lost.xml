@@ -21,18 +21,19 @@
         android:layout_below="@+id/losttext"
         android:layout_marginTop="20dp"
         android:layout_alignLeft="@+id/losttext"
-        android:layout_alignStart="@+id/losttext"
-        android:layout_alignRight="@+id/losttext"
-        android:layout_alignEnd="@+id/losttext" />
+        android:layout_alignStart="@+id/losttext" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bimg"
         android:text="Submit"
         style="@style/button"
+        android:layout_alignTop="@+id/spinner_lost"
+        android:layout_alignRight="@+id/losttext"
+        android:layout_alignEnd="@+id/losttext"
         android:layout_alignBottom="@+id/spinner_lost"
         android:layout_toRightOf="@+id/spinner_lost"
-        android:layout_alignTop="@+id/spinner_lost" />
+        android:layout_toEndOf="@+id/spinner_lost" />
 
     <TextView
         android:layout_width="wrap_content"
