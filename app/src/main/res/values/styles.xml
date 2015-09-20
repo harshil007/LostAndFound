@@ -6,11 +6,11 @@
         <item name="android:background">#D50000</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">bold</item>
-
+        <item name="android:radius">105px</item>
     </style>
 
     <style name="back">
-        <item name="android:background">#FFF9C4</item>
+        <item name="android:background">#26A69A</item>
     </style>
 
     <style name="text">

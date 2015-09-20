@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
                 android:textColor="#000000"
-                android:background="#FFF9C4"
+                android:background="#26A69A"
                 android:layout_marginLeft="15dp"
                 android:drawSelectorOnTop="true"
                 android:layout_marginTop="13dp"
