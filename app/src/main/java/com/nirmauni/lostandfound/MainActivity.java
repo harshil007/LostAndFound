@@ -6,6 +6,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -80,7 +81,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         //View mCustomView = mInflater.inflate(R.layout.custom_actionbar, null);
        // a.setCustomView(mCustomView);
-
+        //a.setBackgroundDrawable(new ColorDrawable(color.));
         a.show();
 
 

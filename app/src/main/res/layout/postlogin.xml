@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_centerVertical="true"
     android:clickable="true"
-    style="@style/back"
+
     >
 
 
@@ -36,8 +36,8 @@
         android:layout_marginLeft="35dp"
         android:layout_alignTop="@+id/foundbutton"
         android:nestedScrollingEnabled="false"
-        android:onClick="onforlostButtonClicked"
-        style="@style/button"/>
+
+        />
 
     <Button
         android:layout_width="110dp"
@@ -50,8 +50,8 @@
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="onforfoundButtonClicked"
-        style="@style/button"/>
+
+        />
 
     <Button
         android:layout_width="100dp"
@@ -62,8 +62,8 @@
         android:layout_marginTop="39dp"
         android:layout_below="@+id/lostbutton"
         android:layout_centerHorizontal="true"
-        android:onClick="onbackButtonClicked"
-        style="@style/button"/>
+
+       />
 
 
 

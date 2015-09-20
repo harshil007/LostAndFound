@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- inherit from the material theme -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Main theme colors -->
+        <!--   your app branding color for the app bar -->
+        <item name="android:actionBarStyle">@style/myActionBar</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="android:buttonStyle">@style/myButton</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+
+
+        <item name="android:windowBackground">@color/bckcolor</item>
+
+        <item name="android:actionMenuTextColor">#000</item>
+    </style>
+
+    <style name="myActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:background">#F44336</item>
+
+        <item name="android:titleTextStyle">@style/ActionBartv</item>
+
+    </style>
+
+    <style name="ActionBartv" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
+
+    <style name="myButton">
+        <item name="android:background">#D50000</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:radius">10dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="myMenu">
+
+
+    </style>
+
+</resources>

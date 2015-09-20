@@ -11,7 +11,7 @@ import android.widget.Button;
 
 
 
-public class PostLogin extends Activity {
+public class PostLogin extends Activity implements View.OnClickListener{
 
     Button lost,found,back;
 
@@ -37,22 +37,26 @@ public class PostLogin extends Activity {
         lost = (Button) findViewById(R.id.lostbutton);
         found = (Button) findViewById(R.id.foundbutton);
         back = (Button) findViewById(R.id.backbutton);
+        lost.setOnClickListener(this);
+        found.setOnClickListener(this);
+        back.setOnClickListener(this);
     }
 
 
-
-    public void onforlostButtonClicked(View view) {
-        Intent i = new Intent("android.intent.action.LOSTACTIVITY");
-        startActivity(i);
-    }
-
-
-    public void onforfoundButtonClicked(View view) {
-        Intent i = new Intent("android.intent.action.FORMACTIVITY");
-        startActivity(i);
-    }
-
-    public void onbackButtonClicked(View view) {
-        finish();
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.lostbutton:
+                Intent i = new Intent("android.intent.action.LOSTACTIVITY");
+                startActivity(i);
+                break;
+            case R.id.foundbutton:
+                Intent ii = new Intent("android.intent.action.FORMACTIVITY");
+                startActivity(ii);
+                break;
+            case R.id.backbutton:
+                finish();
+                break;
+        }
     }
 }

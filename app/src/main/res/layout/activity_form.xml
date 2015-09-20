@@ -6,7 +6,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/back"
+
         >
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
                 android:textColor="#000000"
-                android:background="#FFF9C4"
+
                 android:layout_marginLeft="15dp"
                 android:drawSelectorOnTop="true"
                 android:layout_marginTop="13dp"
@@ -139,7 +139,7 @@
                 android:layout_marginLeft="10dp"
                 android:text="Browse"
                 android:id="@+id/browse_button"
-                style="@style/button"
+
                 />
 
             <TextView
@@ -252,7 +252,7 @@
             android:layout_marginTop="25dp"
             android:id="@+id/bSubmit"
             android:text="Submit"
-            style="@style/button"/>
+           />
 
     </RelativeLayout>
 </ScrollView>
