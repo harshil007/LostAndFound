@@ -14,7 +14,7 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="90dp"
         android:background="@drawable/nu_logo"
         android:id="@+id/nulogo1"
         android:layout_alignParentTop="true"
@@ -24,7 +24,7 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="90dp"
         android:background="@drawable/logo4"
         android:id="@+id/nulogo"
         android:layout_alignTop="@+id/nulogo1"
@@ -51,7 +51,7 @@
         android:layout_below="@+id/tvappname"
         android:layout_centerHorizontal="true"
         android:text="Sign in"
-        android:textSize="30sp"
+        android:textSize="35dp"
         android:fontFamily="sans-serif-medium"
         android:paddingBottom="20dp"
         android:id="@+id/tvLogin"
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Username : "
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:fontFamily="sans-serif-medium"
             android:paddingBottom="20dp" />
         <EditText
@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Password : "
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:fontFamily="sans-serif-medium"
             android:paddingBottom="20dp" />
         <EditText
@@ -123,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_password"
         android:text="Login"
-        android:textSize="25sp"
+        android:textSize="25dp"
         android:id="@+id/bLogin"
 
         android:layout_centerHorizontal="true"
