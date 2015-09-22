@@ -5,7 +5,7 @@
     android:layout_gravity="center"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
-    style="@style/back"
+
     >
 
 <TextView
@@ -105,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvdisp_description"
-        style="@style/button"
+
         android:layout_centerHorizontal="true"
         android:id="@+id/bdismiss"
         android:text="OK"

@@ -419,11 +419,7 @@ public class FormActivity extends Activity implements AdapterView.OnItemSelected
 
 
 
-        try {
-            convert(thumbnail);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         File destination = new File(Environment.getExternalStorageDirectory(),
                 System.currentTimeMillis() + ".jpg");
@@ -436,7 +432,16 @@ public class FormActivity extends Activity implements AdapterView.OnItemSelected
             fo.close();
             String path=destination.getAbsolutePath();
             String name=destination.getName();
-            tvImage.setText(path);
+            tvImage.setText(path+name);
+
+
+
+            try {
+                convert(thumbnail);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -462,7 +467,7 @@ public class FormActivity extends Activity implements AdapterView.OnItemSelected
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(selectedImagePath, options);
-        final int REQUIRED_SIZE = 200;
+        final int REQUIRED_SIZE = 100;
         int scale = 1;
         while (options.outWidth / scale / 2 >= REQUIRED_SIZE
                 && options.outHeight / scale / 2 >= REQUIRED_SIZE)
@@ -486,6 +491,7 @@ public class FormActivity extends Activity implements AdapterView.OnItemSelected
 
         Bitmap bitmap1 = bitmap;
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
         bitmap1.compress(Bitmap.CompressFormat.PNG, 70, stream); // convert Bitmap to ByteArrayOutputStream
         is = new ByteArrayInputStream(stream.toByteArray()); // convert ByteArrayOutputStream to ByteArrayInputStream
     }

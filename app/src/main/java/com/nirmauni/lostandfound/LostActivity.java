@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -85,6 +86,7 @@ public class LostActivity extends Activity  implements AdapterView.OnItemSelecte
         switch (v.getId()){
             case R.id.bimg:
                 item_type = spinner.getSelectedItem().toString();
+
                 get_url(item_type);
                 break;
         }
@@ -137,8 +139,23 @@ public class LostActivity extends Activity  implements AdapterView.OnItemSelecte
                     }
                     //image_url[0]=response.getString("url");
                     //results.setText(image_url[0]);
-                    results.setText(response.length()+" Result(s) Found...");
-                    load_image();
+                    results.setText(response.length() + " Result(s) Found...");
+                    new AsyncTask<Void,Void,Void>(){
+                        CustomListAdapter adapter;
+                        @Override
+                        protected Void doInBackground(Void... params) {
+                            adapter=new CustomListAdapter(LostActivity.this, image_url, image_id);
+                            return null;
+                        }
+
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
+                            load_image(adapter);
+                        }
+                    }.execute();
+
+                    //load_image();
                     Toast.makeText(LostActivity.this, "Success", Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -158,9 +175,14 @@ public class LostActivity extends Activity  implements AdapterView.OnItemSelecte
         mQueue.add(req);
     }
 
-    private void load_image(){
 
-        CustomListAdapter adapter=new CustomListAdapter(this, image_url, image_id);
+
+
+
+
+    private void load_image(CustomListAdapter adapter){
+
+
         image_list=(ListView)findViewById(R.id.image_list_view);
         image_list.setAdapter(adapter);
 
@@ -171,7 +193,7 @@ public class LostActivity extends Activity  implements AdapterView.OnItemSelecte
                                     int position, long id) {
                 // TODO Auto-generated method stub
                 final ProgressDialog p = new ProgressDialog(LostActivity.this);
-                p.setMessage("Retreiving data from databse...");
+                p.setMessage("Retreiving data from databse");
                 p.setProgressStyle(ProgressDialog.STYLE_SPINNER);
                 p.setCancelable(false);
                 p.setTitle("Fetching Data");

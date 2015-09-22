@@ -16,7 +16,7 @@
 
     <Spinner android:id="@+id/spinner_lost"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:drawSelectorOnTop="true"
         android:layout_below="@+id/losttext"
         android:layout_marginTop="20dp"
@@ -24,16 +24,16 @@
         android:layout_alignStart="@+id/losttext" />
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:id="@+id/bimg"
         android:text="Submit"
 
         android:layout_alignTop="@+id/spinner_lost"
         android:layout_alignRight="@+id/losttext"
         android:layout_alignEnd="@+id/losttext"
-        android:layout_alignBottom="@+id/spinner_lost"
         android:layout_toRightOf="@+id/spinner_lost"
-        android:layout_toEndOf="@+id/spinner_lost" />
+        android:layout_toEndOf="@+id/spinner_lost"
+        android:layout_alignBottom="@+id/spinner_lost" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,6 +41,7 @@
         android:textSize="30sp"
         android:layout_below="@+id/spinner_lost"
         android:id="@+id/tvResults"
+        android:layout_centerHorizontal="true"
         />
 
 
