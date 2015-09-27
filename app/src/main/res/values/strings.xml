@@ -4,5 +4,5 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-    <color name="bckcolor">#F5F5F5</color>
+    <color name="bckcolor">#011F2D</color>
 </resources>

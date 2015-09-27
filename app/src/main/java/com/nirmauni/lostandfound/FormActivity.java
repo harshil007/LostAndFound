@@ -1,8 +1,10 @@
 package com.nirmauni.lostandfound;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -50,7 +53,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
 public class FormActivity extends Activity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
@@ -60,6 +64,8 @@ public class FormActivity extends Activity implements AdapterView.OnItemSelected
     Button Bbrowse,Bsubmit;
     EditText etDate,etPlace,etDetails,etName,etRoll_no;
     TextView tvImage;
+
+    ActionBar a;
 
     public static InputStream is=null;
     static int REQUEST_CAMERA;
@@ -87,13 +93,40 @@ public class FormActivity extends Activity implements AdapterView.OnItemSelected
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/roboto_robotoregular.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
         setContentView(R.layout.activity_form);
+
+        a = getActionBar();
+        a.setDisplayHomeAsUpEnabled(true);
+
+        a.show();
+
         setup();
         get_count();
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
 
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     private void get_count() {
 
@@ -467,7 +500,7 @@ public class FormActivity extends Activity implements AdapterView.OnItemSelected
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(selectedImagePath, options);
-        final int REQUIRED_SIZE = 100;
+        final int REQUIRED_SIZE = 200;
         int scale = 1;
         while (options.outWidth / scale / 2 >= REQUIRED_SIZE
                 && options.outHeight / scale / 2 >= REQUIRED_SIZE)

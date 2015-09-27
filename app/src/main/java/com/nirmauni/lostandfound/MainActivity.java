@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -39,6 +40,9 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -60,7 +64,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/roboto_robotoregular.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         try {
             ViewConfiguration config = ViewConfiguration.get(this);
@@ -77,16 +85,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
         a = getActionBar();
-        //LayoutInflater mInflater = LayoutInflater.from(this);
+        a.setDisplayHomeAsUpEnabled(true);
 
-        //View mCustomView = mInflater.inflate(R.layout.custom_actionbar, null);
-       // a.setCustomView(mCustomView);
-        //a.setBackgroundDrawable(new ColorDrawable(color.));
         a.show();
 
 
         setup();
         login.setOnClickListener(this);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override
@@ -203,6 +213,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     }
                 });
         switch (item.getItemId()) {
+
+
+
             case R.id.aboutUs:
                 alertDialog.setTitle("About us..!!");
                 alertDialog.setMessage("Harshil Laheri : 13BCE049\nDishank Mehta : 13BCE054");
@@ -218,6 +231,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.exit:
                 finish();
                 break;
+
+
+
 
         }
         return false;

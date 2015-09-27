@@ -1,11 +1,14 @@
 package com.nirmauni.lostandfound;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,6 +32,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 
 public class LostActivity extends Activity  implements AdapterView.OnItemSelectedListener, View.OnClickListener{
 
@@ -43,16 +49,44 @@ public class LostActivity extends Activity  implements AdapterView.OnItemSelecte
     int[] image_id;
     String item_type;
     Button Yo;
+    ActionBar a;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                        .setDefaultFontPath("fonts/roboto_robotoregular.ttf")
+                        .setFontAttrId(R.attr.fontPath)
+                        .build()
+        );
         setContentView(R.layout.activity_lost);
+
+        a = getActionBar();
+        a.setDisplayHomeAsUpEnabled(true);
+
+        a.show();
 
         setup();
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     public void setup(){

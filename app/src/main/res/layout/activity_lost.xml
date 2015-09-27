@@ -16,7 +16,7 @@
 
     <Spinner android:id="@+id/spinner_lost"
         android:layout_width="100dp"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:drawSelectorOnTop="true"
         android:layout_below="@+id/losttext"
         android:layout_marginTop="20dp"
@@ -24,7 +24,7 @@
         android:layout_alignStart="@+id/losttext" />
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:id="@+id/bimg"
         android:text="Submit"
 

@@ -12,24 +12,29 @@
 
     >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="90dp"
-        android:background="@drawable/nu_logo"
-        android:id="@+id/nulogo1"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/nulogo"
-        android:layout_alignLeft="@+id/tvappname"
-        android:layout_alignStart="@+id/tvappname" />
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="90dp"
-        android:background="@drawable/logo4"
+        android:layout_height="wrap_content"
+        android:id="@+id/nulogonirma"
+        android:text="NIRMA"
+        android:textSize="55sp"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/nulogo"
-        android:layout_alignTop="@+id/nulogo1"
-        android:layout_alignLeft="@+id/bLogin"
-        android:layout_alignStart="@+id/bLogin" />
+        android:text="UNIVERSITY"
+        android:textSize="30sp"
+
+        android:layout_below="@+id/nulogonirma"
+        android:layout_centerHorizontal="true" />
+
+
+
 
 
     <TextView
@@ -43,7 +48,7 @@
         android:textSize="30sp"
         android:layout_centerInParent="true"
         android:padding="20dp"
-        android:textColor="#000000" />
+         />
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,11 +56,11 @@
         android:layout_below="@+id/tvappname"
         android:layout_centerHorizontal="true"
         android:text="Sign in"
-        android:textSize="35dp"
+        android:textSize="30sp"
         android:fontFamily="sans-serif-medium"
         android:paddingBottom="20dp"
         android:id="@+id/tvLogin"
-        android:textColor="#000000" />
+         />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -75,14 +80,14 @@
             android:paddingBottom="20dp" />
         <EditText
             android:inputType="text"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
             android:id="@+id/etUsername"
             android:hint="Roll number/Nirma id"
-            android:textColorHint="@color/material_blue_grey_800"
-            android:textCursorDrawable="@null"
-            android:textColor="#010101" />
+            android:textColorHint="#9E9E9E"
+
+            />
 
 
 
@@ -107,13 +112,13 @@
             android:paddingBottom="20dp" />
         <EditText
             android:inputType="text"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/etPassword"
             android:password="true"
             android:fontFamily="sans-serif-medium"
-            android:textCursorDrawable="@null"
-            android:textColor="#010101"
+
+            android:hint="Roll number/Nirma id"
             android:textColorHint="#fefefe" />
 
     </LinearLayout>
